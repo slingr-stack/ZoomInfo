@@ -1,0 +1,103 @@
+{
+  "label": "ZoomInfo",
+  "name": "zoominfo",
+  "apiVersion": "v1",
+  "internal": false,
+  "configurationType": "GLOBAL",
+  "deployment": {
+    "profiles": [
+      {
+        "name": "default",
+        "label": "Default",
+        "memory": 256,
+        "description": "Default configuration"
+      }
+    ],
+    "allowMultipleInstances": false
+  },
+  "icon48": "https://storage.googleapis.com/static.slingrs.io/platform/endpoints/quickbooks.png",
+  "configurationHelpUrl": "/endpoints_quickbooks.html#configuration",
+  "status": "ACTIVE",
+  "stores": [
+    {"name": "tokens"}
+  ],
+  "events": [
+    {
+      "label": "Webhook",
+      "name": "webhook",
+      "description": "Notifications from ZoomInfo about entities"
+    }
+  ],
+  "functions": [
+    {
+      "label": "GET",
+      "name": "_get"
+    },
+    {
+      "label": "POST",
+      "name": "_post"
+    },
+    {
+      "label": "PUT",
+      "name": "_put"
+    }
+  ],
+  "scripts": [
+    "zoominfo-fn-helpers.js",
+    "functions.js",
+    "http-generic-helpers.js"
+  ],
+  "configuration": [
+    {
+      "label": "Connection Method",
+      "name": "connectionMethod",
+      "type": "buttonsGroup",
+      "multiplicity": "one",
+      "required": true,
+      "defaultValue": "userNamePassword",
+      "typeOptions": {
+        "possibleValues":[
+          {
+            "label":"Password",
+            "name":"userNamePassword"
+          },
+          {
+            "label":"Client ID & Private Key",
+            "name":"clientIdPrivateKey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "userName",
+      "label": "User Name",
+      "type": "text",
+      "required": true,
+    },
+    {
+      "name": "clientId",
+      "label": "Client ID",
+      "type": "text",
+      "required": "config.connectionMethod == 'clientIdPrivateKey'",
+      "visibility": "config.connectionMethod == 'clientIdPrivateKey'" 
+    },
+    {
+      "name": "privateKey",
+      "label": "Private Key",
+      "type": "text",
+      "required": "config.connectionMethod == 'clientIdPrivateKey'",
+      "visibility": "config.connectionMethod == 'clientIdPrivateKey'" 
+    },
+    {
+      "label": "Password",
+      "name": "password",
+      "required": "config.connectionMethod == 'userNamePassword'",
+      "visibility": "config.connectionMethod == 'userNamePassword'" 
+    },
+    {
+        "name": "webhook",
+        "label": "Webhook URL",
+        "type": "label"
+    }
+  ]
+}
