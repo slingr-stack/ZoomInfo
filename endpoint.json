@@ -46,6 +46,14 @@
     "http-generic-helpers.js"
   ],
   "configuration": [
+ 
+    {
+      "name": "userName",
+      "label": "User Name",
+      "type": "text",
+      "required": true,
+      "visibility": true
+    },
     {
       "label": "Connection Method",
       "name": "connectionMethod",
@@ -65,13 +73,6 @@
           }
         ]
       }
-    },
-    {
-      "name": "userName",
-      "label": "User Name",
-      "type": "text",
-      "required": true,
-      "visibility": true
     },
     {
       "name": "clientId",
