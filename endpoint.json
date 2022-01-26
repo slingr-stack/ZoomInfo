@@ -47,12 +47,24 @@
   ],
   "configuration": [
     {
-      "name": "connectionMethod",
       "label": "Connection Method",
-      "type": "text",
-      "value": "userNamePassword",
+      "name": "connectionMethod",
+      "type": "buttonsGroup",
+      "multiplicity": "one",
       "required": true,
-      "visibility": true
+      "defaultValue": "userNamePassword",
+      "typeOptions": {
+        "possibleValues":[
+          {
+            "label":"Password",
+            "name":"userNamePassword"
+          },
+          {
+            "label":"Client ID & Private Key",
+            "name":"clientIdPrivateKey"
+          }
+        ]
+      }
     },
     {
       "name": "userName",
@@ -80,14 +92,6 @@
       "name": "password",
       "required": "config.connectionMethod == 'userNamePassword'",
       "visibility": "config.connectionMethod == 'userNamePassword'" 
-    },
-    {
-        "name": "webhook",
-        "label": "Webhook URL",
-        "type": "label",
-        "value": "www.google.com",
-        "visibility": false
-
     }
   ]
 }
