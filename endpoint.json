@@ -72,7 +72,7 @@
       "name": "userName",
       "label": "User Name",
       "type": "text",
-      "required": true,
+      "required": true
     },
     {
       "name": "clientId",
