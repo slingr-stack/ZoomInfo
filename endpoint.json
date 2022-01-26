@@ -16,7 +16,6 @@
     "allowMultipleInstances": false
   },
   "icon48": "https://storage.googleapis.com/static.slingrs.io/platform/endpoints/zoominfo.png",
-  "configurationHelpUrl": "/",
   "status": "ACTIVE",
   "stores": [
     {"name": "tokens"}
@@ -44,7 +43,6 @@
   ],
   "scripts": [
     "zoominfo-fn-helpers.js",
-    "functions.js",
     "http-generic-helpers.js"
   ],
   "configuration": [
