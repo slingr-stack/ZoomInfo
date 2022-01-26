@@ -46,33 +46,20 @@
     "http-generic-helpers.js"
   ],
   "configuration": [
- 
+    {
+      "name": "connectionMethod",
+      "label": "Connection Method",
+      "type": "text",
+      "value": "userNamePassword",
+      "required": true,
+      "visibility": true
+    },
     {
       "name": "userName",
       "label": "User Name",
       "type": "text",
       "required": true,
       "visibility": true
-    },
-    {
-      "label": "Connection Method",
-      "name": "connectionMethod",
-      "type": "buttonsGroup",
-      "required": true,
-      "defaultValue": "userNamePassword",
-      "typeOptions": {
-        "allowCustom": false,
-        "possibleValues":[
-          {
-            "label":"Password",
-            "name":"userNamePassword"
-          },
-          {
-            "label":"Client ID & Private Key",
-            "name":"clientIdPrivateKey"
-          }
-        ]
-      }
     },
     {
       "name": "clientId",
