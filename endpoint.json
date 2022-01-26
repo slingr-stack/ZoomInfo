@@ -13,7 +13,6 @@
         "description": "Default configuration"
       }
     ],
-    "type": "java11",
     "allowMultipleInstances": false
   },
   "status": "ACTIVE",
@@ -47,51 +46,11 @@
   ],
   "configuration": [
     {
-      "label": "Connection Method",
-      "name": "connectionMethod",
-      "type": "buttonsGroup",
-      "required": true,
-      "defaultValue": "userNamePassword",
-      "typeOptions": {
-        "allowCustom": false,
-        "possibleValues":[
-          {
-            "label":"Password",
-            "name":"userNamePassword"
-          },
-          {
-            "label":"Client ID",
-            "name":"clientIdPrivateKey"
-          }
-        ]
-      }
-    },
-    {
       "name": "userName",
       "label": "User Name",
       "type": "text",
       "required": true,
       "visibility": true
-    },
-    {
-      "name": "clientId",
-      "label": "Client ID",
-      "type": "text",
-      "required": "config.connectionMethod == 'clientIdPrivateKey'",
-      "visibility": "config.connectionMethod == 'clientIdPrivateKey'" 
-    },
-    {
-      "name": "privateKey",
-      "label": "Private Key",
-      "type": "text",
-      "required": "config.connectionMethod == 'clientIdPrivateKey'",
-      "visibility": "config.connectionMethod == 'clientIdPrivateKey'" 
-    },
-    {
-      "label": "Password",
-      "name": "password",
-      "required": "config.connectionMethod == 'userNamePassword'",
-      "visibility": "config.connectionMethod == 'userNamePassword'" 
     }
   ]
 }
