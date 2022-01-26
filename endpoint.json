@@ -13,6 +13,7 @@
         "description": "Default configuration"
       }
     ],
+    "type": "java11",
     "allowMultipleInstances": false
   },
   "status": "ACTIVE",
