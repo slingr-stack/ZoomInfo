@@ -97,7 +97,10 @@
     {
         "name": "webhook",
         "label": "Webhook URL",
-        "type": "label"
+        "type": "label",
+        "value": "www.google.com",
+        "visibility": false
+
     }
   ]
 }
