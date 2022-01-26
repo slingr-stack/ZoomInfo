@@ -50,17 +50,17 @@
       "label": "Connection Method",
       "name": "connectionMethod",
       "type": "buttonsGroup",
-      "multiplicity": "one",
       "required": true,
       "defaultValue": "userNamePassword",
       "typeOptions": {
+        "allowCustom": false,
         "possibleValues":[
           {
             "label":"Password",
             "name":"userNamePassword"
           },
           {
-            "label":"Client ID & Private Key",
+            "label":"Client ID",
             "name":"clientIdPrivateKey"
           }
         ]
